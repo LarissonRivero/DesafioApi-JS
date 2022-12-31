@@ -20,23 +20,17 @@
                 <input type="text" id="cantidadMonedas" placeholder="Cantidad">
                 <div class="container-fluid">
                     <h4>Moneda a Convertir:</h4>
-                            <select id="monedasDisponibles">
-                                <option>Dolar</option>
-                                <option>Euro</option>
-                                <option>UTM</option>
-                                <option>BITCOIN</option>
-                            </select>
+                            <select id="currency"></select>
                     <div class="boton">
-                        <button id="btn" onclick="obtenerIndicadores()">Buscar</button>
+                        <button id="btn">Buscar</button>
                     </div>
-                        <h3>Resultado: $31.46</h3>
+                        <h3 id="result"></h3>
                 </div>
             </div>
             
     </div>
-    <canvas id="estadistica"></canvas>
+    <canvas id="chart"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="./assest/js/main.js"></script>
 </body>
 </html>

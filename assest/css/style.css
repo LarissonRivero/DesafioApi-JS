@@ -46,8 +46,8 @@ h2,h3,h4{
     margin-top: 10px;
 }
 
-#cantidad{
-    height: 7%;
+#cantidadMonedas{
+    height: 8%;
     padding: 5px 0px;
 }
 
@@ -56,7 +56,7 @@ h2,h3,h4{
     padding: 10px;
 }
 
-#cantidad,#monedasDisponibles{
+#cantidadMonedas, #monedasDisponibles{
     border: none;
     width: 40%;
     border-radius: 5px;
