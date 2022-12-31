@@ -8,12 +8,19 @@ hr{
 }
 
 body{
-    background-color: rgb(89, 84, 84);
+    background-color: var(--whitelight);
     font-family: Arial;
 }
 
+.contenedor{
+    display: block;
+    margin: 0px auto;
+    width: 1000px;
+    height: 1000px;
+    background-color: beige;
+}
 .titulo{
-    color: var(--whitelight);
+    color: var(--blackdart);
     font-size: xx-large;
     text-align: center;
 }
@@ -51,15 +58,20 @@ h2,h3,h4{
     padding: 5px 0px;
 }
 
-#monedasDisponibles{
+#currency{
     height: 12%;
     padding: 10px;
 }
 
-#cantidadMonedas, #monedasDisponibles{
+#cantidadMonedas, #currency{
     border: none;
     width: 40%;
     border-radius: 5px;
     text-align: center;
     font-size:large;
+}
+
+#chart{
+    width: 50%;
+    height: 50%;
 }

@@ -7,22 +7,27 @@ const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 //Obtener Información de la API
 const getCurrencies = async () => {
+  try{
     const reqCurrencies = await fetch(url);
     const resData = await reqCurrencies.json();
 
     const currencyList = filterCurrencies.map((currency) => {
       return{
-        code:resData[currency].codigo,
-        value:resData[currency].valor,
+        code: resData[currency].codigo,
+        value: resData[currency].valor,
       };
-  });
-  // Mostar Monedas
-  currencyList.forEach((localCurrency) => {
-    const option = document.createElement('option');
-      option.value = localCurrency.value;
-      option.text = capitalize(localCurrency.code);
-      selectWithCurrencies.appendChild(option);
-  });
+    });
+    // Mostar Monedas
+    currencyList.forEach((localCurrency) => {
+      const option = document.createElement('option');
+        option.value = localCurrency.value;
+        option.text = capitalize(localCurrency.code);
+        selectWithCurrencies.appendChild(option);
+    });
+  } catch (error) {
+    console.log(error);
+    alert('Error al Obtener las Monedas');
+  }
 
 };
 
@@ -47,8 +52,6 @@ const calcResult = (acound, currency) => {
           label: currency,
           data: serieToChart.map((item) => item.valor),
           fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1,
         },
       ],
     };
@@ -65,7 +68,7 @@ const calcResult = (acound, currency) => {
 };
 
 document.getElementById('btn').addEventListener('click', () => {
-const acoundMonedas = document.getElementById('currency').value;
+const acoundMonedas = document.getElementById('cantidadMonedas').value;
   if (acoundMonedas === '') {
     alert ('Debes Ingresar un Monto')
       return;
